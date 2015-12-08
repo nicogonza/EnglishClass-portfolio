@@ -118,35 +118,40 @@
                                     <p>for this assigment we were requiered to do.<a href="left-sidebar.html">Promt</a></p>
 								</section>
                                 <section class="4u 6u(medium) 12u$(xsmall)">
-									<span class="icon alt major fa-file" onclick="insertText('pdf1')"></span>
+									<span class="icon alt major fa-file" onclick="insertText('ins_memo','main')"></span>
 									<h3>Instructional memo</h3>
-										<div id="pdf1" style="visibility: hidden;"></div>
                                     <p>for this assigment we were requiered to do.<a href="left-sidebar.html">Promt</a></p>
 								</section>
 								<section class="4u 6u$(medium) 12u$(xsmall)">
-									<span class="icon alt major fa-file" onclick="insertText('pdf2')"></span>
+									<span class="icon alt major fa-file" onclick="insertText('bnl','main')"></span>
 									<h3>Bad News Letter</h3>
 										<div id="pdf2" style="visibility: hidden;"></div>
-                                    <p>for this assigment we were requiered to do.<a href="left-sidebar.html">Promt</a></p>
+                                    <p>for this assigment we were requiered to do.<a href="left-sidebar.html">Promt</a></p><div id="main" style="visibility: hidden;"></div>
 								</section>
 								<section class="4u$ 6u(medium) 12u$(xsmall)">
-									<span class="icon alt major fa-file" onclick="insertText('pdf3')"></span>
+									<span class="icon alt major fa-file" onclick="insertText('gnl','main')"></span>
 									<h3>Good News Letter</h3>
 										<div id="pdf3" style="visibility: hidden;"></div>
                                     <p>for this assigment we were requiered to do.<a href="left-sidebar.html">Promt</a></p>
 								</section>
                                  <section class="4u 6u(medium) 12u$(xsmall)">
-									<span class="icon alt major fa-file" onclick="insertText('pdf1')"></span>
-									<h3>Correspondance Project</h3>
+									<span class="icon alt major fa-file" onclick="insertText('part_proposal','main2')"></span>
+									<h3>Correspondance Project- Proposal</h3>
 										<div id="pdf1" style="visibility: hidden;"></div>
                                     <p>for this assigment we were requiered to do.<a href="left-sidebar.html">Promt</a></p>
 								</section>
 								<section class="4u 6u$(medium) 12u$(xsmall)">
-									<span class="icon alt major fa-file" onclick="insertText('pdf2')"></span>
-									<h3>Research Infographic</h3>
-										<div id="pdf2" style="visibility: hidden;"></div>
-                                    <p>for this assigment we were requiered to do.<a href="left-sidebar.html">Promt</a></p>
+									<span class="icon alt major fa-file" onclick="insertText('corres_response','main2')"></span>
+									<h3>Correspondance Project- Response</h3>
+										
+                                    <p>for this assigment we were requiered to do.<a href="left-sidebar.html">Promt</a></p><div id="main2" style="visibility: hidden;"></div>
                                 </section>
+                                <section class="4u$ 6u(medium) 12u$(xsmall)">
+									<span class="icon alt major fa-file" onclick="insertText('gnl')"></span>
+									<h3>Research inforgraphic</h3>
+										<div id="pdf3" style="visibility: hidden;"></div>
+                                    <p>for this assigment we were requiered to do.<a href="left-sidebar.html">Promt</a></p>
+								</section>
 							</div>
 						</div>
 						<footer class="major">
@@ -190,35 +195,34 @@
 		</div>
 
 		<!-- Scripts -->
-		<script>
-		$(document).ready(function() {
-			$("a.fancybox").fancybox({
-				maxWidth	: 800,
-				maxHeight	: 600,
-				fitToView	: false,
-				width		: '70%',
-				height		: '70%',
-				autoSize	: false,
-				closeClick	: false,
-				openEffect	: 'none',
-				closeEffect	: 'none'
-			});
-		});</script>
         <script>
+            var chk= "chp2";
 		function insertText(elemID,divID)
 		      {
+                
 		        var elem = document.getElementById(divID);
 				var sr=elemID+".pdf"
 				dummy='<embed id="'+elemID+' "src="'+sr+'" width="600" height="500" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">';
-				elem.innerHTML=dummy;
+				//
 				$("#"+divID).attr("src",sr);
 				
-				if(elem.style.visibility == 'visible'){
-					elem.style.visibility='hidden';
-					elem.innerHTML='<p></p>';}
-				else
-					elem.style.visibility='visible';
-				
+				if(divID!=chk){
+                    document.getElementById(chk).style.visibility='hidden';
+                    document.getElementById(chk).innerHTML='<p></p>'
+                    elem.style.visibility='visible';
+                    elem.innerHTML=dummy;
+                    chk=divID;}
+				else if(divID==chk && elem.style.visibility=='visible'){
+					elem.innerHTML=dummy;
+                }
+                else
+                     { 
+                         
+                         elem.style.visibility='visible';
+                         elem.innerHTML=dummy;
+                         chk=divID;
+                     
+                     }
 		      }
 		</script>
 			<script src="assets/js/jquery.min.js"></script>
