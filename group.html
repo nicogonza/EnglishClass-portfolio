@@ -31,34 +31,28 @@
 				<div id="main" class="wrapper style1">
 					<div class="container">
 						<header class="major">
-							<h2>Group Project</h2>
-							<p>This page contains the filed for the group project</p>
+							<h2>Group proposal</h2>
+							<p>This page contains the filed for the group proposal</p>
 						</header>
 
 						<!-- Content -->
 							<section id="content">
 								<a href="#" class="image fit"><img src="images/uncc.jpg" alt="" /></a>
-								<h3>Group Project</h3>
+								<h3>Group proposal</h3>
 								<p>
-                                    For the major group project, we had to come up with a proposal to present to the class. We decided our proposal should be a new building for our company since we were growing and overwhelmed with the extra items coming into the yard. We divided the sections for the proposal evenly amongst the group. I was assigned to come up with an estimated cost for the project. During our meeting times we all worked individually since we only had to focus in a specific part for the proposal. When we were all done with our individual parts we came together and formatted the proposal so that it would make sense.</p> 
+                                    For the major group proposal, we had to come up with a proposal to present to the class. We decided our proposal should be a new building for our company since we were growing and overwhelmed with the extra items coming into the yard. We divided the sections for the proposal evenly amongst the group. I was assigned to come up with an estimated cost for the project. During our meeting times we all worked individually since we only had to focus in a specific part for the proposal. When we were all done with our individual parts we came together and formatted the proposal so that it would make sense.</p> 
 <p>
 For the oral presentation we all focused once again on the same specific part as we had on the actual proposal. This allowed everyone to talk about what they had worked on and they were knowledgeable in. Since we all knew about what we were talking about more that any of the other members of the group we decided it would be the best idea as we would be more comfortable presenting. As a visual aid we used Prezi to present the proposal as it engages the audience more than a paper proposal or PowerPoint would. We used the oral presentation to do a quick summary of what we had worked on for the proposal. One of the main issues we encountered when designing the prezi was coming up with a suitable background. It was hard to find something that portrayed a salvage yard and didn’t look like a picture of abandoned trash behind our proposal. We didn’t prepare much together for the oral presentation since we all knew what to say when our time to speak came up. 
                                 </p>
                                 
                                 <div>
                                     <div class="row uniform">
-								<section class="4u 6u(medium) 12u$(xsmall)">
-									<span class="icon alt major fa-file" onclick="insertText('info','info')"></span>
-                                    <div id="info" style="visibility: hidden;"></div>
-									<h3>infographic</h3>
-                                    <button class="button" onclick="insertText('info_prompt','info')">Prompt</button>
-                                  
-								</section>
                                         <section class="4u 6u(medium) 12u$(xsmall)">
-									<span class="icon alt major fa-file" onclick="insertText('chp7','project')"></span>
-                                    <div id="project" style="visibility: hidden;"></div>
-									<h3>Project Proposal</h3>
-                                    <button class="button" onclick="insertText('chapter7_prompt','project')">Prompt</button>
+									<span class="icon alt major fa-file" onclick="insertText('proposal','proposal')"></span>
+                                    <div id="proposal" style="visibility: hidden;"></div>
+                                            <button class="button" onclick="insertText('proposal_prompt','proposal')">Prompt</button>
+									<h3>project Proposal</h3>
+                                    
                                    				</section>
                                     <h3>Prezi</h3>
                                 <iframe id="iframe_container" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" width="550" height="400" src="https://prezi.com/embed/l54jox9h-4iy/?bgcolor=ffffff&amp;lock_to_path=0&amp;autoplay=0&amp;autohide_ctrls=0&amp;landing_data=bHVZZmNaNDBIWnNjdEVENDRhZDFNZGNIUE43MHdLNWpsdFJLb2ZHanI5dVV5cE9LUVB2ci8yNmpYS2tUL0xWRjdRPT0&amp;landing_sign=m4-VxGytclWtphg2VONrdxUzRw_h35aBWowSPrCe51Q"></iframe>
@@ -79,8 +73,8 @@ For the oral presentation we all focused once again on the same specific part as
         
         
         <script>
-            var chk= "info";
-            var chp="info";
+            var chk= null;
+            var chp=null;
 		function insertText(elemID,divID)
 		      {
                 
@@ -90,7 +84,7 @@ For the oral presentation we all focused once again on the same specific part as
 				//
 				$("#"+divID).attr("src",sr);
 				
-				if(divID!=chk && elemID!=chp){
+				if(divID!=chk && elemID!=chp && chk!=null && chp!=null){
                     document.getElementById(chk).style.visibility='hidden';
                     document.getElementById(chk).innerHTML='<p></p>';
                     elem.style.visibility='visible';
@@ -109,7 +103,6 @@ For the oral presentation we all focused once again on the same specific part as
                          
                          elem.style.visibility='visible';
                          elem.innerHTML=dummy;
-                         document.getElementById(chk).innerHTML='<p></p>';
                          chk=divID;
                          chp=elemID;
                      
